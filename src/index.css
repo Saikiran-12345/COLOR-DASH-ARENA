@@ -1770,7 +1770,7 @@ h1, h2, h3, .font-game {
 
 /* 3D Color Box Style */
 .color-box {
-    box-shadow: 0 8px 0 rgba(0,0,0,0.6), inset 0 4px 0 rgba(255,255,255,0.3) !important;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.6), none !important;
     border: 3px solid rgba(255,255,255,0.1) !important;
     transition: all 0.1s ease !important;
     border-radius: 20px !important;
@@ -1782,7 +1782,7 @@ h1, h2, h3, .font-game {
 
 /* Target Box Style */
 .target-box {
-    box-shadow: 0 0 30px rgba(255,255,255,0.2), inset 0 4px 0 rgba(255,255,255,0.4) !important;
+    box-shadow: 0 0 30px rgba(255,255,255,0.2), none !important;
     border: 6px solid #ffffff !important;
     border-radius: 24px !important;
 }

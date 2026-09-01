@@ -38,7 +38,7 @@ export const EndlessMode: React.FC = () => {
 
     for(let i = 0; i < count; i++) {
         // Vary HSL slightly
-        const h = (baseH + (Math.random() * similarity - similarity/2)) % 360;
+        const h = (((baseH + (Math.random() * similarity - similarity/2)) % 360) + 360) % 360;
         const s = Math.max(0, Math.min(100, baseS + (Math.random() * similarity - similarity/2)));
         const l = Math.max(0, Math.min(100, baseL + (Math.random() * similarity - similarity/2)));
         newColors.push(hslToHex(h, s, l));
