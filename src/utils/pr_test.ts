@@ -1,0 +1,1 @@
+\nexport const prTest1 = () => console.log(1);\n
