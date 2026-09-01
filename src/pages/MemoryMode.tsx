@@ -93,7 +93,8 @@ export const MemoryMode: React.FC = () => {
 
   if (gameOver) {
       return (
-          <div className="flex flex-col items-center justify-center min-h-screen gap-6">
+          <div className="bg-grid"></div>
+    <div className="flex flex-col animate__animated animate__fadeIn" items-center justify-center min-h-screen gap-6">
               <h1 className="text-4xl font-bold text-danger">GAME OVER</h1>
               <div className="text-2xl">Reached Level: {level}</div>
               <div className="flex gap-4 mt-4">
@@ -105,7 +106,8 @@ export const MemoryMode: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-6">
+    <div className="bg-grid"></div>
+    <div className="flex flex-col animate__animated animate__fadeIn" items-center justify-center min-h-screen gap-6">
       <div className="flex justify-between w-full max-w-2xl px-4">
         <Button onClick={() => navigate('/')} variant="outline">Home</Button>
         <div className="text-xl font-bold flex gap-4">
@@ -116,7 +118,8 @@ export const MemoryMode: React.FC = () => {
       
       <h1 className="text-3xl font-bold">Memory Mode</h1>
       
-      <div className="flex flex-col items-center gap-8 mt-8">
+      <div className="bg-grid"></div>
+    <div className="flex flex-col animate__animated animate__fadeIn" items-center gap-8 mt-8">
         <div className="h-12 flex items-center">
             {showing ? (
                 <span className="text-warning text-2xl font-bold animate-pulse">Watch the sequence...</span>

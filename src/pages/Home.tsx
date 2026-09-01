@@ -7,8 +7,9 @@ export const Home: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-      <h1 className="text-4xl font-bold mb-8">COLOR DASH ARENA</h1>
+    <div className="bg-grid"></div>
+    <div className="flex flex-col items-center justify-center min-h-screen gap-6 animate__animated animate__zoomIn">
+      <h1 className="text-6xl font-game mb-8 text-primary drop-shadow-2xl">COLOR DASH ARENA</h1>
       
       <div className="grid grid-cols-2 gap-4 w-full max-w-2xl">
         <Card className="p-6 flex flex-col items-center gap-4 bg-card rounded-lg shadow-lg border">

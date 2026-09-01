@@ -45,7 +45,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   };
 
   const baseStyles = 'rounded transition flex items-center justify-center cursor-pointer select-none font-bold border';
-  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 shadow';
+  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : 'btn-game hover:brightness-110'; // disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 shadow';
   const combinedClassName = `${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${disabledStyles} ${className}`.trim();
 
   return (

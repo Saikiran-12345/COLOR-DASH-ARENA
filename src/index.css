@@ -1734,5 +1734,69 @@ body { background: var(--bg-color); color: var(--text-color); font-family: syste
 .bg-success { background: var(--success); }
 .bg-card { background: var(--card-bg); }
 .border { border: 1px solid var(--border); }
-    . t e x t - p r i m a r y   {   c o l o r :   v a r ( - - p r i m a r y ) ;   }   . t e x t - d a n g e r   {   c o l o r :   v a r ( - - d a n g e r ) ;   }   . t e x t - s u c c e s s   {   c o l o r :   v a r ( - - s u c c e s s ) ;   }   . t e x t - w a r n i n g   {   c o l o r :   v a r ( - - w a r n i n g ) ;   }  
+    . t e x t - p r i m a r y   {   c o l o r :   v a r ( - - p r i m a r y ) ;   }   . t e x t - d a n g e r   {   c o l o r :   v a r ( - - d a n g e r ) ;   }   . t e x t - s u c c e s s   {   c o l o r :   v a r ( - - s u c c e s s ) ;   }   . t e x t - w a r n i n g   {   c o l o r :   v a r ( - - w a r n i n g ) ;   } 
  
+ 
+
+/* Game Theme Overrides */
+body {
+    background: radial-gradient(circle at center, #1e293b 0%, #020617 100%) !important;
+    font-family: 'Nunito', sans-serif !important;
+    color: #f8fafc;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .font-game {
+    font-family: 'Righteous', cursive !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* 3D Button Style */
+.btn-game {
+    box-shadow: 0 6px 0 rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.2) !important;
+    transition: all 0.1s ease !important;
+    font-family: 'Righteous', cursive !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-game:active {
+    transform: translateY(6px) !important;
+    box-shadow: 0 0 0 rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.1) !important;
+}
+
+/* 3D Color Box Style */
+.color-box {
+    box-shadow: 0 8px 0 rgba(0,0,0,0.6), inset 0 4px 0 rgba(255,255,255,0.3) !important;
+    border: 3px solid rgba(255,255,255,0.1) !important;
+    transition: all 0.1s ease !important;
+    border-radius: 20px !important;
+}
+.color-box:active {
+    transform: translateY(8px) scale(0.98) !important;
+    box-shadow: 0 0 0 rgba(0,0,0,0.6), inset 0 2px 0 rgba(255,255,255,0.1) !important;
+}
+
+/* Target Box Style */
+.target-box {
+    box-shadow: 0 0 30px rgba(255,255,255,0.2), inset 0 4px 0 rgba(255,255,255,0.4) !important;
+    border: 6px solid #ffffff !important;
+    border-radius: 24px !important;
+}
+
+/* Background Animated Grid */
+.bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
