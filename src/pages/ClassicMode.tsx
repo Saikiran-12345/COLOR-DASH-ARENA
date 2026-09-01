@@ -58,50 +58,53 @@ export const ClassicMode: React.FC = () => {
 
   if (gameOver) {
       return (
-          <div className="bg-grid"></div>
-    <div className="flex flex-col animate__animated animate__fadeIn" items-center justify-center min-h-screen gap-6">
-              <h1 className="text-4xl font-bold text-danger">GAME OVER</h1>
-              <div className="text-2xl">Final Score: {score}</div>
-              <div className="flex gap-4 mt-4">
-                  <Button onClick={restart} variant="primary">Play Again</Button>
-                  <Button onClick={() => navigate('/')} variant="outline">Home</Button>
-              </div>
-          </div>
+          <>
+            <div className="bg-grid"></div>
+            <div className="flex flex-col items-center justify-center min-h-screen gap-6 animate__animated animate__fadeIn">
+                <h1 className="text-6xl font-game text-danger drop-shadow-lg">GAME OVER</h1>
+                <div className="text-3xl">Final Score: <span className="text-primary">{score}</span></div>
+                <div className="flex gap-4 mt-8">
+                    <Button onClick={restart} variant="primary" size="lg">Play Again</Button>
+                    <Button onClick={() => navigate('/')} variant="outline" size="lg">Home</Button>
+                </div>
+            </div>
+          </>
       );
   }
 
   return (
-    <div className="bg-grid"></div>
-    <div className="flex flex-col animate__animated animate__fadeIn" items-center justify-center min-h-screen gap-6">
-      <div className="flex justify-between w-full max-w-2xl px-4">
-        <Button onClick={() => navigate('/')} variant="outline">Home</Button>
-        <div className="text-xl font-bold flex gap-4">
-            <span className="text-primary">Score: {score}</span>
-            <span className="text-warning">Combo: x{combo}</span>
-            <span className="text-danger">Lives: {lives}</span>
-        </div>
-      </div>
-      
-      <h1 className="text-3xl font-bold">Classic Mode</h1>
-      
+    <>
       <div className="bg-grid"></div>
-    <div className="flex flex-col animate__animated animate__fadeIn" items-center gap-8 mt-8">
-        <div 
-          className="w-48 h-48 target-box transition-colors duration-200"
-          style={{ backgroundColor: targetColor }}
-        />
+      <div className="flex flex-col items-center justify-center min-h-screen gap-6 animate__animated animate__fadeIn">
+        <div className="flex justify-between w-full max-w-2xl px-4 mt-4 absolute top-4">
+          <Button onClick={() => navigate('/')} variant="outline">Home</Button>
+          <div className="text-2xl font-game flex gap-6 drop-shadow-md">
+              <span className="text-primary">Score: {score}</span>
+              <span className="text-warning">Combo: x{combo}</span>
+              <span className="text-danger">Lives: {lives}</span>
+          </div>
+        </div>
         
-        <div className="grid grid-cols-2 gap-4">
-          {options.map((color, idx) => (
-            <div 
-              key={idx}
-              onClick={() => handleGuess(color)}
-              className="w-32 h-32 color-box cursor-pointer"
-              style={{ backgroundColor: color }}
-            />
-          ))}
+        <h1 className="text-4xl font-game mt-20">Classic Mode</h1>
+        
+        <div className="flex flex-col items-center gap-12 mt-8">
+          <div 
+            className="w-48 h-48 target-box transition-colors duration-200"
+            style={{ backgroundColor: targetColor }}
+          />
+          
+          <div className="grid grid-cols-2 gap-6">
+            {options.map((color, idx) => (
+              <div 
+                key={idx}
+                onClick={() => handleGuess(color)}
+                className="w-32 h-32 color-box cursor-pointer"
+                style={{ backgroundColor: color }}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

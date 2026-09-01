@@ -93,57 +93,60 @@ export const MemoryMode: React.FC = () => {
 
   if (gameOver) {
       return (
-          <div className="bg-grid"></div>
-    <div className="flex flex-col animate__animated animate__fadeIn" items-center justify-center min-h-screen gap-6">
-              <h1 className="text-4xl font-bold text-danger">GAME OVER</h1>
-              <div className="text-2xl">Reached Level: {level}</div>
-              <div className="flex gap-4 mt-4">
-                  <Button onClick={restart} variant="primary">Play Again</Button>
-                  <Button onClick={() => navigate('/')} variant="outline">Home</Button>
-              </div>
-          </div>
+          <>
+            <div className="bg-grid"></div>
+            <div className="flex flex-col items-center justify-center min-h-screen gap-6 animate__animated animate__fadeIn">
+                <h1 className="text-6xl font-game text-danger drop-shadow-lg">GAME OVER</h1>
+                <div className="text-3xl">Reached Level: <span className="text-primary">{level}</span></div>
+                <div className="flex gap-4 mt-8">
+                    <Button onClick={restart} variant="primary" size="lg">Play Again</Button>
+                    <Button onClick={() => navigate('/')} variant="outline" size="lg">Home</Button>
+                </div>
+            </div>
+          </>
       );
   }
 
   return (
-    <div className="bg-grid"></div>
-    <div className="flex flex-col animate__animated animate__fadeIn" items-center justify-center min-h-screen gap-6">
-      <div className="flex justify-between w-full max-w-2xl px-4">
-        <Button onClick={() => navigate('/')} variant="outline">Home</Button>
-        <div className="text-xl font-bold flex gap-4">
-            <span className="text-primary">Level: {level}</span>
-            <span className="text-danger">Lives: {lives}</span>
-        </div>
-      </div>
-      
-      <h1 className="text-3xl font-bold">Memory Mode</h1>
-      
+    <>
       <div className="bg-grid"></div>
-    <div className="flex flex-col animate__animated animate__fadeIn" items-center gap-8 mt-8">
-        <div className="h-12 flex items-center">
-            {showing ? (
-                <span className="text-warning text-2xl font-bold animate-pulse">Watch the sequence...</span>
-            ) : (
-                <span className="text-success text-2xl font-bold">Your turn! ({playerSeq.length}/{sequence.length})</span>
-            )}
+      <div className="flex flex-col items-center justify-center min-h-screen gap-6 animate__animated animate__fadeIn">
+        <div className="flex justify-between w-full max-w-2xl px-4 mt-4 absolute top-4">
+          <Button onClick={() => navigate('/')} variant="outline">Home</Button>
+          <div className="text-2xl font-game flex gap-6 drop-shadow-md">
+              <span className="text-primary">Level: {level}</span>
+              <span className="text-danger">Lives: {lives}</span>
+          </div>
         </div>
-
-        <div 
-          className="w-48 h-48 rounded-2xl shadow-lg border-4 border-white transition-colors duration-100"
-          style={{ backgroundColor: activeColor || '#1e293b' }}
-        />
         
-        <div className="grid grid-cols-2 gap-4">
-          {options.map((color, idx) => (
-            <div 
-              key={idx}
-              onClick={() => handleGuess(color)}
-              className={`w-32 h-32 rounded-xl cursor-pointer shadow transition-all duration-150 ${showing ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 active:scale-95'}`}
-              style={{ backgroundColor: color }}
-            />
-          ))}
+        <h1 className="text-4xl font-game mt-20">Memory Mode</h1>
+        
+        <div className="flex flex-col items-center gap-12 mt-8">
+          <div className="h-12 flex items-center">
+              {showing ? (
+                  <span className="text-warning text-3xl font-game animate-pulse drop-shadow-md">Watch the sequence...</span>
+              ) : (
+                  <span className="text-success text-3xl font-game drop-shadow-md">Your turn! ({playerSeq.length}/{sequence.length})</span>
+              )}
+          </div>
+
+          <div 
+            className="w-48 h-48 target-box transition-colors duration-100"
+            style={{ backgroundColor: activeColor || '#1e293b' }}
+          />
+          
+          <div className="grid grid-cols-2 gap-6">
+            {options.map((color, idx) => (
+              <div 
+                key={idx}
+                onClick={() => handleGuess(color)}
+                className={`w-32 h-32 color-box cursor-pointer ${showing ? 'opacity-50 cursor-not-allowed' : ''}`}
+                style={{ backgroundColor: color }}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
