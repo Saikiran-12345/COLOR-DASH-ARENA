@@ -1734,4 +1734,5 @@ body { background: var(--bg-color); color: var(--text-color); font-family: syste
 .bg-success { background: var(--success); }
 .bg-card { background: var(--card-bg); }
 .border { border: 1px solid var(--border); }
-    
+    . t e x t - p r i m a r y   {   c o l o r :   v a r ( - - p r i m a r y ) ;   }   . t e x t - d a n g e r   {   c o l o r :   v a r ( - - d a n g e r ) ;   }   . t e x t - s u c c e s s   {   c o l o r :   v a r ( - - s u c c e s s ) ;   }   . t e x t - w a r n i n g   {   c o l o r :   v a r ( - - w a r n i n g ) ;   }  
+ 
