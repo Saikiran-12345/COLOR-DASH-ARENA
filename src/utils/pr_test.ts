@@ -1,1 +1,1 @@
-\nexport const prTest1 = () => console.log(1);\n
+\nexport const prTest1 = () => console.log(1);\n\nexport const prTest2 = () => console.log(2);\n
