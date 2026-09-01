@@ -1,0 +1,1 @@
+export const generateSeq = () => [1,2,3];
