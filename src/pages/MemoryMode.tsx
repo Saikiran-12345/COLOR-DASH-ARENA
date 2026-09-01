@@ -121,7 +121,8 @@ export const MemoryMode: React.FC = () => {
         
         <h1 className="text-4xl font-game mt-20">Memory Mode</h1>
         
-        <div className="flex flex-col items-center gap-12 mt-8">
+        <div className="flex flex-col items-center gap-8 mt-4">
+          <p className="text-xl mb-4 opacity-80 text-center px-4">Memorize the flashing sequence, then repeat it!</p>
           <div className="h-12 flex items-center">
               {showing ? (
                   <span className="text-warning text-3xl font-game animate-pulse drop-shadow-md">Watch the sequence...</span>
@@ -137,7 +138,7 @@ export const MemoryMode: React.FC = () => {
           
           <div className="grid grid-cols-2 gap-6">
             {options.map((color, idx) => (
-              <div 
+              <button 
                 key={idx}
                 onClick={() => handleGuess(color)}
                 className={`w-32 h-32 color-box cursor-pointer ${showing ? 'opacity-50 cursor-not-allowed' : ''}`}

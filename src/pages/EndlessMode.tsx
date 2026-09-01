@@ -94,7 +94,8 @@ export const EndlessMode: React.FC = () => {
         
         <h1 className="text-4xl font-game mt-20">Endless Mode</h1>
         
-        <div className="flex flex-col items-center gap-12 mt-8">
+        <div className="flex flex-col items-center gap-8 mt-4">
+          <p className="text-xl mb-4 opacity-80 text-center px-4">Match the target color above by clicking the correct option below!</p>
           <div 
             className="w-48 h-48 target-box transition-colors duration-200"
             style={{ backgroundColor: targetColor }}
@@ -102,10 +103,10 @@ export const EndlessMode: React.FC = () => {
           
           <div className={`grid ${gridClass} gap-6`}>
             {options.map((color, idx) => (
-              <div 
+              <button 
                 key={idx}
                 onClick={() => handleGuess(color)}
-                className="w-24 h-24 sm:w-32 sm:h-32 color-box cursor-pointer"
+                className="w-24 h-24 sm:w-32 sm:h-32 color-box cursor-pointer outline-none"
                 style={{ backgroundColor: color }}
               />
             ))}

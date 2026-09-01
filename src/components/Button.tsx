@@ -49,12 +49,12 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const combinedClassName = `${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${disabledStyles} ${className}`.trim();
 
   return (
-    <div 
+    <button 
       id={id}
       className={combinedClassName}
       style={style}
       onClick={!disabled ? onClick : undefined}
-      role="button"
+      type="button"
       aria-disabled={disabled}
       aria-label={ariaLabel}
       tabIndex={disabled ? -1 : (tabIndex ?? 0)}
@@ -66,6 +66,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
       }}
     >
       {children}
-    </div>
+    </button>
   );
 };
