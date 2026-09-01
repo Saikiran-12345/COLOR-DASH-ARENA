@@ -1,0 +1,1 @@
+export const playSound = () => console.log('beep');
